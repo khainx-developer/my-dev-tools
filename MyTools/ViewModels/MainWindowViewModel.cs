@@ -9,11 +9,10 @@ namespace MyTools.ViewModels
     {
         public DockPanel? SplMain { get; set; }
         public Action? CloseAction { get; set; }
-        private Controls Children { get; } = new();
 
         public void Base64ActionHandler()
         {
-            Children.Clear();
+            SplMain?.Children.Clear();
 
             Base64ViewModel vm = new();
             var base64Component = new Base64Component
@@ -21,6 +20,18 @@ namespace MyTools.ViewModels
                 DataContext = vm
             };
             SplMain?.Children.Add(base64Component);
+        }
+
+        public void UrlEncodeActionHandler()
+        {
+            SplMain?.Children.Clear();
+
+            UrlEncodeViewModel vm = new();
+            var urlEncodeComponent = new UrlEncodeComponent()
+            {
+                DataContext = vm
+            };
+            SplMain?.Children.Add(urlEncodeComponent);
         }
 
         public void ExitCommandHandler()

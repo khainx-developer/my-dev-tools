@@ -20,6 +20,10 @@
         <DependentUpon>Base64Component.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
+      <Compile Update="Views\Components\UrlEncodeComponent.axaml.cs">
+        <DependentUpon>UrlEncodeComponent.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
     </ItemGroup>
     <ItemGroup>
       <None Update="AppIcon.ico">

@@ -22,7 +22,7 @@
             </MenuItem>
             <MenuItem Header="Text">
                 <MenuItem Command="{Binding Base64ActionHandler}" Header="Base64" />
-                <MenuItem Header="UrlEncode" />
+                <MenuItem Command="{Binding UrlEncodeActionHandler}" Header="UrlEncode" />
             </MenuItem>
         </Menu>
         <DockPanel Name="SplMain" />
