@@ -1,0 +1,44 @@
+<DockPanel
+    mc:Ignorable="d"
+    x:Class="MyTools.Views.Components.Base64Component"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:components="clr-namespace:MyTools.ViewModels.Components"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.DataContext>
+        <components:Base64ViewModel />
+    </Design.DataContext>
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" MinHeight="200" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" MinHeight="200" />
+            </Grid.RowDefinitions>
+            <TextBox
+                AcceptsReturn="True"
+                Grid.Row="0"
+                Name="InputTextBox"
+                Text="{Binding Input}"
+                TextWrapping="Wrap" />
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button Command="{Binding EncodeButton}" Grid.Column="0">Encode</Button>
+                <Button Command="{Binding DecodeButton}" Grid.Column="1">Decode</Button>
+            </Grid>
+            <TextBox
+                Grid.Row="2"
+                IsReadOnly="true"
+                Name="OutputTextBox"
+                Text="{Binding Output, Mode=TwoWay}"
+                TextWrapping="Wrap" />
+        </Grid>
+    </DockPanel>
+</DockPanel>
