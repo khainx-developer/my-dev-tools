@@ -52,7 +52,7 @@ namespace MyTools.ViewModels.Components
 
             _output = this.WhenAnyValue(x => x.Input)
                 .Where(x => !string.IsNullOrEmpty(x))
-                .Select(_ => Convert.ToBase64String(base64EncodedBytes))
+                .Select(_ => System.Text.Encoding.UTF8.GetString(base64EncodedBytes))
                 .ToProperty(this, x => x.Output, out _output);
         }
     }
