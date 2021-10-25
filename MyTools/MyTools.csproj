@@ -6,7 +6,6 @@
         <ApplicationIcon>AppIcon.ico</ApplicationIcon>
     </PropertyGroup>
     <ItemGroup>
-        <Folder Include="Models\" />
         <AvaloniaResource Include="Assets\**" />
     </ItemGroup>
     <ItemGroup>
