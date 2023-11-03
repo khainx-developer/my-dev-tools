@@ -1,0 +1,17 @@
+﻿services:
+  mydevtools-api:
+    image: mydevtools-api
+    build:
+      context: api
+      dockerfile: MyDevTools/Dockerfile
+    container_name: mydevtools-api
+    ports:
+      - 51200:80
+  mydevtools-ui:
+    image: mydevtools-ui
+    build:
+      context: ui
+      dockerfile: Dockerfile
+    container_name: mydevtools-ui
+    ports:
+      - 51201:3000
